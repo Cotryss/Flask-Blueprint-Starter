@@ -1,0 +1,51 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+    {% if messages %}
+
+        <div class="fixed top-5 right-5 z-50 space-y-3 w-96">
+
+            {% for category, message in messages %}
+
+                {% if category == "success" %}
+                    {% set color = "bg-green-500" %}
+                {% elif category == "danger" %}
+                    {% set color = "bg-red-500" %}
+                {% elif category == "warning" %}
+                    {% set color = "bg-yellow-500" %}
+                {% elif category == "info" %}
+                    {% set color = "bg-blue-500" %}
+                {% else %}
+                    {% set color = "bg-gray-800" %}
+                {% endif %}
+
+                <div
+                    class="{{ color }} text-white px-5 py-4 rounded-xl shadow-xl animate-pulse"
+                    role="alert"
+                >
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+        <script>
+
+            setTimeout(() => {
+
+                document.querySelectorAll("[role='alert']").forEach(alert => {
+
+                    alert.style.transition = "opacity .4s";
+                    alert.style.opacity = "0";
+
+                    setTimeout(() => alert.remove(), 400);
+
+                });
+
+            }, 4000);
+
+        </script>
+
+    {% endif %}
+
+{% endwith %}

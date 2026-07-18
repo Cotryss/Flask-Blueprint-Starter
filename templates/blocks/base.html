@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% block title %}
+            Flask Template
+        {% endblock %}
+    </title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Ortak CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    {% block head %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    {% include "blocks/messages.html" %}
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Ortak JS -->
+    <script
+        src="{{ url_for('static', filename='js/app.js') }}">
+    </script>
+
+    {% block scripts %}
+    {% endblock %}
+
+    <footer class="mt-20 pt-8 border-t border-gray-200 text-center">
+
+        <p class="text-sm text-gray-500">
+            Flask Blueprint Starter
+        </p>
+
+        <p class="mt-2 text-gray-400">
+
+            Designed & Developed by
+
+            <a
+                href="https://github.com/Cotryss"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-semibold text-gray-700 hover:text-blue-600 transition"
+            >
+                Ege Yaman (@Cotryss)
+            </a>
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
