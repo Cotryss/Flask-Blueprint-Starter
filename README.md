@@ -51,7 +51,7 @@ Flask • SQLAlchemy • Flask-Login • Tailwind CSS
 
 <p align="center">
 Developed by
-<a href="https://github.com/KULLANICI_ADIN">
+<a href="https://github.com/Cotryss">
 <strong>Ege Yaman · @Cotryss</strong>
 </a>
 </p>
