@@ -24,7 +24,7 @@ Blueprint architecture and ready for production projects.
 <pre>
 app/
 ├── blueprints/
-├── services/
+├── utils/
 ├── startup/
 ├── templates/
 ├── static/
